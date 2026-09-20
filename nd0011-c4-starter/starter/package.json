@@ -1,0 +1,36 @@
+{
+    "name": "firdaws-lamidi-udacity-testing-optimization",
+    "version": "1.0.0",
+    "description": "This project includes the prebuilt Study Night application to apply testing skills by building unit tests with Mocha and end-to-end tests with Cypress and to prepare the application for production by optimizing it manually and using tools like Parcel",
+    "license": "MIT",
+    "author": "Firdaws Lamidi",
+    "type": "module",
+    "scripts": {
+        "test": "mocha",
+        "gulp": "gulp"
+    },
+    "targets": {
+        "default": {
+            "context": "browser"
+        }
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "cypress": "^15.21.1",
+        "eslint": "^10.11.0",
+        "globals": "^17.12.0",
+        "gulp": "^5.0.1",
+        "gulp-cli": "^3.1.0",
+        "gulp-shell": "^0.8.0",
+        "parcel": "^2.13.3"
+    },
+    "prettier": {
+        "semi": true,
+        "trailingComma": "all",
+        "tabWidth": 4
+    },
+    "dependencies": {
+        "chai": "^6.2.2",
+        "mocha": "^12.0.2"
+    }
+}
