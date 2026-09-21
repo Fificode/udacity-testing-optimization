@@ -57,7 +57,6 @@ const createInput = (name) => {
     // const form
     input.name = name;
     input.id = name;
-    input.setAttribute("data-cy", "set-title");
     return input;
 };
 
@@ -65,7 +64,6 @@ const createSubmitButton = (value) => {
     const submit = document.createElement("input");
     submit.type = "submit";
     submit.value = value;
-    submit.setAttribute("data-cy", "set-submit");
     return submit;
 };
 

@@ -22,14 +22,12 @@ describe("Form Functionality", () => {
         cy.get("[data-cy='cardSetPage']").click();
         cy.get("[data-cy='1']").click();
         cy.get("[data-cy='toggle_form']").click();
-        cy.get("[data-cy='card_form']")
-            .find("input[name='termInput']")
-            .type("JavaScript");
-        cy.get("[data-cy='card_form']")
-            .find("input[name='descriptionInput']")
-            .type("JavaScript is an object oriented programming language");
-        cy.get("[data-cy='card_form']").find("input[type='submit']").click();
-        cy.get(".innerCard")
+        cy.get("[data-cy='term_input']").type("JavaScript");
+        cy.get("[data-cy='description_input']").type(
+            "JavaScript is an object oriented programming language",
+        );
+        cy.get("[data-cy='add_card_btn']").click();
+        cy.get("[data-cy='inner_card']")
             .should("contain", "JavaScript")
             .and(
                 "contain",
@@ -41,7 +39,7 @@ describe("Form Functionality", () => {
         cy.get("[data-cy='cardSetPage']").click();
         cy.get("[data-cy='1']").click();
         cy.get("[data-cy='toggle_form']").click();
-        cy.get("[data-cy='card_form']").find("input[type='submit']").click();
+        cy.get("[data-cy='add_card_btn']").click();
         cy.get('[data-cy="form-error"]').should("be.visible");
     });
 });

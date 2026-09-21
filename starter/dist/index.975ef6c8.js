@@ -641,6 +641,7 @@ const renderCardSetsPage = ()=>{
     // Creates a container for the pages contents
     const container = document.createElement("div");
     container.className = "cardPageContainer";
+    container.setAttribute("data-cy", "card-page-container");
     // Creates the header for the page
     const pageHeader = (0, _utilityRenderFunctionsJs.createHeader)("h2", "Study Set Library", "study-set-header");
     // Function creates the element representing the study card set
@@ -736,6 +737,7 @@ const generateFlashCard = (card)=>{
     // Creates an inner card that will help with the Flash Card animation
     const innerCard = document.createElement("div");
     innerCard.className = "innerCard";
+    innerCard.setAttribute("data-cy", "inner_card");
     innerCard.append(termSide, descriptionSide);
     // Creates a container for the card
     const cardContainer = document.createElement("div");
@@ -833,12 +835,15 @@ const renderCardForm = (set)=>{
     const termLabel = (0, _utilityRenderFunctionsJs.createLabel)("Term", "termInput");
     // Creates input for the term
     const termInput = (0, _utilityRenderFunctionsJs.createInput)("termInput");
+    termInput.setAttribute("data-cy", "term_input");
     // Creates label for description
     const descriptionLabel = (0, _utilityRenderFunctionsJs.createLabel)("Description", "descriptionInput");
     // Creates input for description
     const descriptionInput = (0, _utilityRenderFunctionsJs.createInput)("descriptionInput");
+    descriptionInput.setAttribute("data-cy", "description_input");
     //Creates submit input
     const addCardBtn = (0, _utilityRenderFunctionsJs.createSubmitButton)("Add Card");
+    addCardBtn.setAttribute("data-cy", "add_card_btn");
     // Handle form submission ane errors
     cardForm.addEventListener("submit", (e)=>{
         // Prevents forms default behavior
@@ -949,14 +954,12 @@ const createInput = (name)=>{
     // const form
     input.name = name;
     input.id = name;
-    input.setAttribute("data-cy", "set-title");
     return input;
 };
 const createSubmitButton = (value)=>{
     const submit = document.createElement("input");
     submit.type = "submit";
     submit.value = value;
-    submit.setAttribute("data-cy", "set-submit");
     return submit;
 };
 
@@ -1011,7 +1014,9 @@ const createSetForm = (setCards)=>{
     const label = (0, _utilityRenderFunctionsJs.createLabel)("Card Set Title", "titleInput");
     // Creates the input fot the title
     const input = (0, _utilityRenderFunctionsJs.createInput)("titleInput");
+    input.setAttribute("data-cy", "set-title");
     const submitButton = (0, _utilityRenderFunctionsJs.createSubmitButton)("Submit Set");
+    submitButton.setAttribute("data-cy", "set-submit");
     // Adds an event listener to the form.
     // On submission, a new study set will be created.
     form.addEventListener("submit", (e)=>submitSet(e, setCards));
@@ -1063,6 +1068,7 @@ const renderAboutPage = ()=>{
     // Create the outer container for the about section
     const containerOuter = document.createElement("div");
     containerOuter.className = "aboutContainer";
+    containerOuter.setAttribute("data-cy", "about-page");
     // Create the text container for the heading, subheading, and paragraph
     const textContainer = document.createElement("div");
     textContainer.className = "textContainer";
@@ -1146,6 +1152,7 @@ const renderHomePage = ()=>{
     //Container for elements
     const homeContainer = document.createElement("div");
     homeContainer.className = "homeContainer";
+    homeContainer.setAttribute("data-cy", "home-page");
     homeContainer.append(header, subHeading, image);
     main.append(homeContainer);
 };
