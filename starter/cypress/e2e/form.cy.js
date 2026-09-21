@@ -10,6 +10,7 @@ describe("Form Functionality", () => {
             .find("input[name='titleInput']")
             .type("JavaScript");
         cy.get("[data-cy='set_form']").find("input[type='submit']").click();
+        cy.get("[data-cy='5']").should("be.visible");
     });
     //Unhappy path to create set form
     it("Create Failed Set Form", () => {
@@ -30,6 +31,12 @@ describe("Form Functionality", () => {
             .find("input[name='descriptionInput']")
             .type("JavaScript is an object oriented programming language");
         cy.get("[data-cy='card_form']").find("input[type='submit']").click();
+        cy.get(".innerCard")
+            .should("contain", "JavaScript")
+            .and(
+                "contain",
+                "JavaScript is an object oriented programming language",
+            );
     });
     //Unhappy path to add card form
     it("Create Failed Set Form", () => {
