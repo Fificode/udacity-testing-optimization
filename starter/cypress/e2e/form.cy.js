@@ -6,18 +6,16 @@ describe("Form Functionality", () => {
     it("Create Succesful Set Form", () => {
         cy.get("[data-cy='cardSetPage']").click();
         cy.get("[data-cy='toggle_form']").click();
-        cy.get("[data-cy='set_form']")
-            .find("input[name='titleInput']")
-            .type("JavaScript");
-        cy.get("[data-cy='set_form']").find("input[type='submit']").click();
+        cy.get('[data-cy="set-title"]').type("JavaScript");
+        cy.get('[data-cy="set-submit"]').click();
         cy.get("[data-cy='5']").should("be.visible");
     });
     //Unhappy path to create set form
     it("Create Failed Set Form", () => {
         cy.get("[data-cy='cardSetPage']").click();
         cy.get("[data-cy='toggle_form']").click();
-        cy.get("[data-cy='set_form']").find("input[type='submit']").click();
-        cy.get(".error").should("be.visible");
+        cy.get('[data-cy="set-submit"]').click();
+        cy.get('[data-cy="form-error"]').should("be.visible");
     });
     // Happy path to add card form
     it("Add Succesful Card Form", () => {
@@ -44,6 +42,6 @@ describe("Form Functionality", () => {
         cy.get("[data-cy='1']").click();
         cy.get("[data-cy='toggle_form']").click();
         cy.get("[data-cy='card_form']").find("input[type='submit']").click();
-        cy.get(".error").should("be.visible");
+        cy.get('[data-cy="form-error"]').should("be.visible");
     });
 });

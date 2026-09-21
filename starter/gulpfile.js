@@ -1,10 +1,10 @@
 import gulp from "gulp";
 import shell from "gulp-shell";
 
-gulp.task("unit test", shell.task("parcel index.html"));
+gulp.task("test", shell.task("npx mocha test/shuffle.js"));
 
-gulp.task("test", shell.task("parcel index.html"));
+gulp.task("parcel", shell.task("npx parcel index.html"));
 
 gulp.task("cypress", shell.task("npx cypress run"));
 
-gulp.task("default", gulp.series("unit test", "test", "cypress"));
+gulp.task("default", gulp.series("test", "parcel", "cypress"));

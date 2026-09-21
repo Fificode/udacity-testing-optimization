@@ -882,6 +882,7 @@ const showError = (message)=>{
         error.textContent = message;
         error.style.color = "red";
         error.className = "error";
+        error.setAttribute("data-cy", "form-error");
         form.appendChild(error);
     } else if (existingError.textContent !== message) existingError.textContent = message;
 };
@@ -948,12 +949,14 @@ const createInput = (name)=>{
     // const form
     input.name = name;
     input.id = name;
+    input.setAttribute("data-cy", "set-title");
     return input;
 };
 const createSubmitButton = (value)=>{
     const submit = document.createElement("input");
     submit.type = "submit";
     submit.value = value;
+    submit.setAttribute("data-cy", "set-submit");
     return submit;
 };
 
