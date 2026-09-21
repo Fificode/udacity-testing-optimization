@@ -1,6 +1,6 @@
 describe("Form Functionality", () => {
     beforeEach(() => {
-        cy.visit("http://localhost:61642/");
+        cy.visit("http://localhost:1234");
     });
     //Happy path to create set form
     it("Create Succesful Set Form", () => {
